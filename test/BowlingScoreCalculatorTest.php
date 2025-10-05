@@ -17,7 +17,22 @@ class BowlingScoreCalculatorTest extends TestCase
             [[2],     2],
             [[3],     3],
             [[4],     4],
-            [[5],     5]
+            [[5],     5],
+            [[6],     6],
+            [[7],     7],
+            [[8],     8],
+            [[9],     9],
+            [[10],     10],
+            [[1,1],     2],
+            [[1,1,2,2,3,3],12],
+            [[1,1,2,2,3,3,4,4],20],
+            [[1,1,2,2,3,3,4,4,5,5,0,6],36],
+            [[1,1,2,2,3,3,4,4,5,5,0,6,7,0],43],
+            [[6,4,5,5,6,0] ,37],
+            [[6,4,5,5,0] ,25],
+            [[1,9,3,7,4,6,5] ,47],
+            [[1,1,2,2,3,3,4,4,5,5],30],
+            [[1,1,2,2,3,3,4,4,5,5,0,6,7,0,6,4],53]
         ];
     }
 
@@ -29,18 +44,4 @@ class BowlingScoreCalculatorTest extends TestCase
         $result = $bowlingCalculator->getBowlingScore($score);
         $this->assertEquals($expectedResult, $result);
     }
-
-    public function testWith1Score_thenReturnScore(){
-        $bowlingCalculator = new BowlingScoreCalculator();
-        $result = $bowlingCalculator->getBowlingScore([10]);
-        $this->assertEquals(10, $result);
-    }
-
-    /*public function testWhenCalculateWithAllStrikes_thenReturnScoreOf300(){
-        $bowlingCalculator = new BowlingScoreCalculator();
-
-        $result = $bowlingCalculator->getBowlingScore([10,10,10,10,10,10,10,10,10,10,10,10]);
-        $this->assertEquals(300, $result);
-
-    }*/
 }
